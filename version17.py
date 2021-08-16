@@ -27,6 +27,8 @@ class Table(object):
         self.l5 = tk.Label(self.root, textvariable=self.my_str, width=10)
         self.d5 = tk.Button(self.root, text='Delete', width=10,
                             command=lambda: self.delete_data())
+        self.k5 = tk.Button(self.root, text='Delete All', width=10,
+                            command=lambda: self.delete_all())
         self.d6 = tk.Button(self.root, text='Add', width=10,
                             command=lambda: self.record_data())
         self.d7 = tk.Button(self.root, text='Fetch', width=10,
@@ -64,6 +66,7 @@ class Table(object):
         self.b1.grid(row=6, column=2)
         self.l5.grid(row=8, column=1)
         self.d5.grid(row=8, column=2)
+        self.k5.grid(row=5, column=3)
         self.d6.grid(row=8, column=3)
         self.d7.grid(row=8, column=4)
 
@@ -89,6 +92,17 @@ class Table(object):
         selected_item = self.tree.selection()[0]
         self.tree.delete(selected_item)
         print("Data deleted !")
+
+    def delete_all(self):
+        myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+        mydb = myclient["Sensor_Record"]
+        mycol = mydb["data1"]
+
+        mycol.delete_many({})
+
+        selected_items = self.tree.selection()
+        for selected_item in selected_items:
+            self.tree.delete(selected_item)
 
     def select_item(self, *args):
         global row_value
