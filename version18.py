@@ -8,7 +8,7 @@ import pymongo
 class Table(object):
     def __init__(self):
         self.root = tk.Tk()
-        self.root.geometry('540x400')
+        self.root.geometry('540x480')
         self.root.title("Sensor Insert")
         self.root.grid()
         self.style = ttk.Style()
@@ -100,8 +100,7 @@ class Table(object):
 
         mycol.delete_many({})
 
-        selected_items = self.tree.selection()
-        for selected_item in selected_items:
+        for selected_item in self.tree.get_children():
             self.tree.delete(selected_item)
 
     def select_item(self, *args):
@@ -164,7 +163,6 @@ class Table(object):
 
 def main():
     app = Table()
-    app.show_data()
     app.window_table()
 
 
