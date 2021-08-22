@@ -20,7 +20,7 @@ class CreateCanvasObject(object):
         self.image_name = image_name
         self.xpos, self.ypos = xpos, ypos
 
-        self.tk_image = tk.PhotoImage(file="{}{}".format(IMAGE_PATH, image_name))
+        self.tk_image = tk.PhotoImage(file="0.png".format(IMAGE_PATH, image_name))
         self.image_obj = canvas.create_image(xpos, ypos, image=self.tk_image)
 
         canvas.tag_bind(self.image_obj, '<Button1-Motion>', self.move)
