@@ -141,6 +141,7 @@ class Table(object):
         for mydoc_all in mycol.find():
             print(mydoc_all)
         print("get_value_mongo", mydoc_all)
+        self.show_data()
 
     def show_data(self):
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
