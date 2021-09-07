@@ -31,8 +31,10 @@ def item_selected(event):
     for selected_item in tree.selection():
         # dictionary
         item = tree.item(selected_item)
+        print(item)
         # list
         record = item['values']
+        print(record)
         #
         showinfo(title='Information',
                  message=','.join(record))
