@@ -32,7 +32,7 @@ class Table(object):
         self.k5 = tk.Button(self.root, text='Delete All', width=10,
                             command=lambda: self.delete_all())
         self.d6 = tk.Button(self.root, text='Save', width=10,
-                            command=lambda: self.record_data())
+                            command=lambda: self.save_data())
         self.d7 = tk.Button(self.root, text='Fetch', width=10,
                             command=lambda: self.get_value_mongo())
 
@@ -51,7 +51,7 @@ class Table(object):
 
         self.tree['show'] = 'headings'
 
-        self.tree.bind('<ButtonRelease-1>', self.select_item, self.record_data)
+        self.tree.bind('<ButtonRelease-1>', self.select_item)
 
         self.tree.grid(row=1, column=1, columnspan=4, padx=20, pady=20)
 
@@ -86,7 +86,6 @@ class Table(object):
         sensor_name = self.t1.get("1.0", 'end-1c')
         sensor_ip = self.t3.get("1.0", 'end-1c')
 
-        global primary_key
         self.primary_key = self.primary_key + 1
         self.tree.insert("", 'end',
                          values=(int(self.primary_key), sensor_name, sensor_ip, str(self.time_data)))
@@ -127,14 +126,10 @@ class Table(object):
             self.tree.delete(selected_item)
 
     def select_item(self, *args):
-        global row_value
         curItem = self.tree.item(self.tree.selection())
         row_value = curItem['values']
         print('cell_value = ', row_value)
         return row_value
-
-    def button_click(self):
-        pass
 
     def convert_data(self):
         products = [self.select_item()]
@@ -149,7 +144,7 @@ class Table(object):
         print("arr", arr)
         return arr
 
-    def record_data(self):
+    def save_data(self):
         myclient = pymongo.MongoClient("mongodb://localhost:27017/")
         mydb = myclient["Sensor_Record"]
 
