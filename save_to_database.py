@@ -1,6 +1,6 @@
+import csv
 import tkinter as tk  # PEP8: `import *` is not preferred
 from tkinter import ttk
-import csv
 
 
 # --- functions ----

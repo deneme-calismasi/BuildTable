@@ -1,7 +1,6 @@
-from tkinter import ttk
-from tkinter import *
-
 import sqlite3
+from tkinter import *
+from tkinter import ttk
 
 
 class Product:

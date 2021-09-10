@@ -2,8 +2,8 @@
 # treeview scrollbars using tkinter
 
 
-from tkinter import ttk
 import tkinter as tk
+from tkinter import ttk
 
 # Creating tkinter window
 window = tk.Tk()

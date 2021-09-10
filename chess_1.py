@@ -1,10 +1,8 @@
-import board
-import pieces
-# import Tkinter as tk
-from PIL import Image, ImageTk
 import tkinter as tk
-from tkinter import ttk
-from tkinter import *
+
+import board
+# import Tkinter as tk
+from PIL import ImageTk
 
 
 class BoardGuiTk(tk.Frame):

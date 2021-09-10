@@ -1,9 +1,10 @@
-import tkinter as tk
-from tkinter import ttk
-from tkinter import *
 import datetime as dt
-import pymongo
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
 from tkinter.messagebox import showinfo
+
+import pymongo
 
 
 class Table(object):

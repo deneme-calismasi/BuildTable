@@ -1,7 +1,8 @@
-import tkinter as tk
-from tkinter import ttk
-from tkinter import *
 import datetime as dt
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+
 import pymongo
 
 

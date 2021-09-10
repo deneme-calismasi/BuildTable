@@ -1,10 +1,9 @@
-import tkinter as tk
-from tkinter import ttk
-from tkinter import *
 import datetime as dt
+import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+
 import pymongo
-import pandas as pd
-import numpy as np
 
 
 class Table(tk.Tk):

@@ -1,7 +1,8 @@
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
+
 from PyQt5.QtCore import Qt, QMimeData
 from PyQt5.QtGui import QDrag
+from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 
 
 class Button(QPushButton):

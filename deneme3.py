@@ -1,9 +1,9 @@
-from tkinter import *
-from tkinter import ttk
-from tkinter import messagebox
 import sqlite3
-from tkinter import colorchooser
 from configparser import ConfigParser
+from tkinter import *
+from tkinter import colorchooser
+from tkinter import messagebox
+from tkinter import ttk
 
 root = Tk()
 root.title('Codemy.com - TreeBase')

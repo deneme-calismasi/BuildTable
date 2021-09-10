@@ -1,5 +1,3 @@
-from tkinter import ttk
-import tkinter as tk
 from sqlalchemy import create_engine
 
 my_conn = create_engine("mysql+mysqldb://userid:pw@localhost/my_db")

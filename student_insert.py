@@ -1,6 +1,6 @@
-from tkinter import ttk
 import tkinter as tk
 from tkinter import *
+from tkinter import ttk
 
 my_w = tk.Tk()
 my_w.geometry('400x500')
